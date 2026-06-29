@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Transaction History</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🏦 Banking Management System</h1>
+
+        <h2>Transaction History</h2>
+
+        <form action="/transactions" method="post">
+
+            <input
+                type="number"
+                name="account_number"
+                placeholder="Enter Account Number"
+                required>
+
+            <button type="submit">
+
+                View Transactions
+
+            </button>
+
+        </form>
+
+        <br>
+
+        {% if transactions %}
+
+        <h3>
+
+            Account Number : {{ account_number }}
+
+        </h3>
+
+        <table>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Transaction Type</th>
+
+                <th>Amount</th>
+
+                <th>Date & Time</th>
+
+            </tr>
+
+            {% for transaction in transactions %}
+
+            <tr>
+
+                <td>{{ transaction.id }}</td>
+
+                <td>{{ transaction.transaction_type }}</td>
+
+                <td>₹ {{ transaction.amount }}</td>
+
+                <td>{{ transaction.transaction_date }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+        {% elif account_number %}
+
+        <h3 style="color:red;">
+
+            No Transactions Found
+
+        </h3>
+
+        {% endif %}
+
+        <br>
+
+        <a href="/dashboard">
+
+            <button type="button">
+
+                Dashboard
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

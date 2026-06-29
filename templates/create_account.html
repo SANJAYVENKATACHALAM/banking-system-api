@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🏦 Banking Management System</h1>
+
+        <h2>Create New Bank Account</h2>
+
+        <form action="/create-account" method="post">
+
+            <input
+                type="text"
+                name="full_name"
+                placeholder="Enter Full Name"
+                required>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter Email Address"
+                required>
+
+            <input
+                type="text"
+                name="phone"
+                placeholder="Enter Phone Number"
+                required>
+
+            <input
+                type="number"
+                name="account_number"
+                placeholder="Enter Account Number"
+                required>
+
+            <input
+                type="number"
+                name="balance"
+                step="0.01"
+                placeholder="Opening Balance"
+                required>
+
+            <button type="submit">
+
+                Create Account
+
+            </button>
+
+        </form>
+
+        <br>
+
+        {% if error %}
+
+        <div class="error-box">
+
+            {{ error }}
+
+        </div>
+
+        {% endif %}
+
+        {% if success %}
+
+        <div class="success-box">
+
+            {{ success }}
+
+        </div>
+
+        <br>
+
+        <div class="balance-box">
+
+            <h3>Customer Details</h3>
+
+            <hr>
+
+            <p>
+                <strong>Customer Name :</strong>
+                {{ full_name }}
+            </p>
+
+            <p>
+                <strong>Email :</strong>
+                {{ email }}
+            </p>
+
+            <p>
+                <strong>Phone :</strong>
+                {{ phone }}
+            </p>
+
+            <p>
+                <strong>Account Number :</strong>
+                {{ account.account_number }}
+            </p>
+
+            <p>
+                <strong>Opening Balance :</strong>
+                ₹ {{ account.balance }}
+            </p>
+
+        </div>
+
+        {% endif %}
+
+        <br>
+
+        <a href="/dashboard">
+
+            <button type="button">
+
+                Dashboard
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

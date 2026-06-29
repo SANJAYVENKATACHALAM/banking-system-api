@@ -1,0 +1,270 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    background:linear-gradient(135deg,#0f4c81,#3b82f6);
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+.card{
+
+    width:600px;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+
+}
+
+h1{
+
+    text-align:center;
+
+    color:#0f4c81;
+
+    margin-bottom:10px;
+
+}
+
+h2{
+
+    text-align:center;
+
+    color:#333;
+
+    margin-bottom:25px;
+
+}
+
+h3{
+
+    color:#0f4c81;
+
+    margin-bottom:15px;
+
+}
+
+p{
+
+    margin-bottom:12px;
+
+}
+
+hr{
+
+    margin:20px 0;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:15px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border:2px solid #0f4c81;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#0f4c81;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+button:hover{
+
+    background:#08365b;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+.success-box{
+
+    background:#d4edda;
+
+    color:#155724;
+
+    padding:15px;
+
+    border-radius:8px;
+
+    margin-bottom:20px;
+
+}
+
+.error-box{
+
+    background:#f8d7da;
+
+    color:#721c24;
+
+    padding:15px;
+
+    border-radius:8px;
+
+    margin-bottom:20px;
+
+}
+
+.balance-box{
+
+    background:#eef6ff;
+
+    border:1px solid #c6def7;
+
+    border-radius:10px;
+
+    padding:20px;
+
+    margin-top:20px;
+
+}
+
+.balance-box p{
+
+    margin:10px 0;
+
+    font-size:17px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+}
+
+table th{
+
+    background:#0f4c81;
+
+    color:white;
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+}
+
+table td{
+
+    border:1px solid #ddd;
+
+    padding:12px;
+
+    text-align:center;
+
+}
+
+table tr:nth-child(even){
+
+    background:#f4f8fc;
+
+}
+
+table tr:hover{
+
+    background:#dbeeff;
+
+}
+
+@media(max-width:700px){
+
+    .card{
+
+        width:95%;
+
+        padding:20px;
+
+    }
+
+    h1{
+
+        font-size:24px;
+
+    }
+
+    h2{
+
+        font-size:20px;
+
+    }
+
+    button{
+
+        font-size:15px;
+
+    }
+
+}

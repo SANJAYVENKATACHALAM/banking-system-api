@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Check Balance</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🏦 Banking Management System</h1>
+
+        <h2>Check Balance</h2>
+
+        <form action="/balance"
+              method="post">
+
+            <input
+                type="number"
+                name="account_number"
+                placeholder="Enter Account Number"
+                required>
+
+            <button type="submit">
+
+                Check Balance
+
+            </button>
+
+        </form>
+
+
+        {% if error %}
+
+            <h3 style="color:red;">
+
+                {{ error }}
+
+            </h3>
+
+        {% endif %}
+
+
+        {% if account %}
+
+            <div class="balance-box">
+
+                <h2>
+
+                    Account Details
+
+                </h2>
+
+                <hr>
+
+                <p>
+
+                    <b>Account Number :</b>
+
+                    {{ account.account_number }}
+
+                </p>
+
+                <p>
+
+                    <b>Current Balance :</b>
+
+                    ₹ {{ account.balance }}
+
+                </p>
+
+            </div>
+
+        {% endif %}
+
+
+        <br>
+
+        <a href="/dashboard">
+
+            <button>
+
+                Dashboard
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

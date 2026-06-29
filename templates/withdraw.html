@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Withdraw Money</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🏦 Banking Management System</h1>
+
+        <h2>Withdraw Money</h2>
+
+        <form action="/withdraw" method="post">
+
+            <input
+                type="number"
+                name="account_number"
+                placeholder="Enter Account Number"
+                required>
+
+            <input
+                type="number"
+                name="amount"
+                step="0.01"
+                placeholder="Enter Amount"
+                required>
+
+            <button type="submit">
+
+                Withdraw
+
+            </button>
+
+        </form>
+
+        <br>
+
+        {% if error %}
+
+        <div class="error-box">
+
+            {{ error }}
+
+        </div>
+
+        {% endif %}
+
+        {% if success %}
+
+        <div class="success-box">
+
+            {{ success }}
+
+        </div>
+
+        <div class="balance-box">
+
+            <h3>Account Details</h3>
+
+            <hr>
+
+            <p>
+
+                <strong>Account Number :</strong>
+
+                {{ account.account_number }}
+
+            </p>
+
+            <p>
+
+                <strong>Remaining Balance :</strong>
+
+                ₹ {{ account.balance }}
+
+            </p>
+
+        </div>
+
+        {% endif %}
+
+        <br>
+
+        <a href="/dashboard">
+
+            <button type="button">
+
+                Dashboard
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
